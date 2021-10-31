@@ -41,6 +41,8 @@ const Wrap = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-image: ${({ carImage }) => `url("/images/${carImage}")`};
+
+  @media (max-width: 768px) {}
 `;
 
 const ItemText = styled.div`

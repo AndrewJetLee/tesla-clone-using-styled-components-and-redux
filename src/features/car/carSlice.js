@@ -7,6 +7,10 @@ const initialState = {
 const carSlice = createSlice({
     name: 'car',
     initialState,
+    // Reducers are functions that manipulate the state
     reducers: {}
 })
 
+export const selectCars = state => state.car.cars;
+
+export default carSlice.reducer; 

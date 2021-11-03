@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { selectCars } from "../features/car/carSlice";
 import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom'
 
 function Header() {
   const [burgerStatus, setBurgerStatus] = useState(false);
@@ -11,20 +12,20 @@ function Header() {
 
   return (
     <Container>
-      <a href="#">
-        <img src="/images/logo.svg" alt="" />
-      </a>
+      <Link to='/'>
+        <img src="/images/logo.svg" alt=""/>
+      </Link>
       <Menu>
-        {cars &&
-          cars.map((car, index) => (
-            <a href="#" key={index}>
-              {car}
-            </a>
-          ))}
+          <Link to='/ModelS'>Model S</Link>
+          <Link to='/ModelS'>Model 3</Link>
+          <Link to='/ModelS'>Model X</Link>
+          <Link to='/ModelS'>Model Y</Link>
+          <Link to='/ModelS'>Solar Roof</Link>
+          <Link to='/ModelS'>Solar Panels</Link>
       </Menu>
       <RightMenu>
         <a href="#">Shop</a>
-        <a href="#">Tesla Account</a>
+        <a href="#">Account</a>
         <CustomMenu onClick={(e) => setBurgerStatus(true)} />
       </RightMenu>
       <BurgerNav burgerStatus={burgerStatus}>
@@ -97,7 +98,7 @@ const Menu = styled.div`
   align-items: center;
   justify-content: center;
   flex: 1;
-    
+
 
   @media (max-width: 768px) {
     display: none;
@@ -105,7 +106,6 @@ const Menu = styled.div`
 
   a {
     font-weight: 600;
-    text-transform: uppercase;
     padding: 0 10px;
   }
 `;
@@ -116,7 +116,6 @@ const RightMenu = styled.div`
   justify-content: center;
   a {
     font-weight: 600;
-    text-transform: uppercase;
     padding: 0 10px;
   }
 `;
